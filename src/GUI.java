@@ -21,17 +21,29 @@ public class GUI {
 
         JLabel heading = new JLabel("insert your measures");
 
-        JLabel heightLabel = new JLabel("height in kg: ");
+        JLabel heightLabel = new JLabel("height in cm: ");
         heightInput = new JTextField();
-        JLabel weightLabel = new JLabel("weight in m: ");
+        JLabel weightLabel = new JLabel("weight in kg: ");
         weightInput = new JTextField();
 
         button = new JButton("Calculate");
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                bmi.setText("test");
-                health.setText("test");
+                int  weight = Integer.parseInt(weightInput.getText());
+                int height = Integer.parseInt(heightInput.getText());
+
+                BMICalc calculator = new BMICalc(weight, height);
+                int calculatedBMI = calculator.getBmi();
+                bmi.setText(""+calculatedBMI);
+
+                String healthstate;
+                if (calculatedBMI<19) healthstate="underweight";
+                else if (calculatedBMI<25) healthstate="normal weight";
+                else if (calculatedBMI<30) healthstate="overweight";
+                else if (calculatedBMI<40) healthstate="obesity";
+                else healthstate="extreme obesity";
+                health.setText(healthstate);
             }
         });
 
