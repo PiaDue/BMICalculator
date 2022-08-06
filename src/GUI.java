@@ -15,11 +15,8 @@ public class GUI {
     public GUI() {
         frame = new JFrame();
         panel = new JPanel();
-        panel.setBorder(BorderFactory.createEmptyBorder(10,10,20,10));
-        panel.setLayout(new GridLayout(6,2));
-
-
-        JLabel heading = new JLabel("insert your measures");
+        panel.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        panel.setLayout(new GridLayout(5,2));
 
         JLabel heightLabel = new JLabel("height in cm: ");
         heightInput = new JTextField();
@@ -49,13 +46,12 @@ public class GUI {
 
         JLabel bmiLabel = new JLabel("BMI: ");
         bmi = new JLabel("");
-        JLabel healtLabel = new JLabel("health: ");
+        JLabel healtLabel = new JLabel("health state: ");
         health = new JLabel("");
 
-        panel.add(heading);     panel.add(new Container());
         panel.add(heightLabel); panel.add(heightInput);
         panel.add(weightLabel); panel.add(weightInput);
-        panel.add(button);      panel.add(new Container());
+        panel.add(new Container()); panel.add(button);
         panel.add(bmiLabel);    panel.add(bmi);
         panel.add(healtLabel);  panel.add(health);
 
