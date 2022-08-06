@@ -1,12 +1,12 @@
 public class BMICalc {
-    private int weight;
-    private double height;
+    private double weight;
+    private double  height;
     private int bmi;
 
     public BMICalc(int weight, int height) {
-        this.weight = weight;
-        this.height = height;
-        this.bmi = weight/(height*height);
+        this.weight = (double) weight;
+        this.height = height/100.0;
+        this.bmi = (int)(this.weight/(this.height*this.height));
     }
 
     public int getBmi() {
