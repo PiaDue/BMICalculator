@@ -21,9 +21,9 @@ public class GUI {
 
         JLabel heading = new JLabel("insert your measures");
 
-        JLabel heightLabel = new JLabel("height: ");
+        JLabel heightLabel = new JLabel("height in kg: ");
         heightInput = new JTextField();
-        JLabel weightLabel = new JLabel("weight: ");
+        JLabel weightLabel = new JLabel("weight in m: ");
         weightInput = new JTextField();
 
         button = new JButton("Calculate");
